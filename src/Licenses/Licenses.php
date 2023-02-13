@@ -55,16 +55,16 @@ class Licenses
      * @param string $siteUrl The IP address or domain where the license was installed.
      * @param string $sitePath Name of the directory where the license was installed.
      * @param string $version TekBASE version (lite = Lite, privat = privat, std = business, adv = business + billing)
-     * @param bool $cms This indicates whether the cms is available. (0 = no, 1 = yes)
-     * @param bool $shop This indicates whether the shop is available (The shop needs the CMS). (0 = no, 1 = yes)
+     * @param int $cms This indicates whether the cms is available. (0 = no, 1 = yes)
+     * @param int $shop This indicates whether the shop is available (The shop needs the CMS). (0 = no, 1 = yes)
      * @param int $gwislots Here you can see how many gameservers can be managed. (e.g. 0, 10, 20, 50, 100, 200, 500, 999999)
      * @param int $rwislots Here you can see how many customer server/vserver can be managed. (e.g. 0, 10, 20, 50, 100, 200, 500, 999999)
      * @param int $swislots Here you can see how many streamervers can be managed. (e.g. 0, 10, 20, 50, 100, 200, 500, 999999)
      * @param int $vwislots Here you can see how many voiceservers can be managed. (e.g. 0, 10, 20, 50, 100, 200, 500, 999999)
-     * @param bool $purchase Specifies whether the version is a rental or purchase version. (0 = rental, 1 = purchase)
+     * @param int $purchase Specifies whether the version is a rental or purchase version. (0 = rental, 1 = purchase)
      * @return array|string
      */
-    public function createLicense(string $username, string $siteIP, string $siteUrl, string $sitePath, string $version, bool $cms, bool $shop, int $gwislots, int $rwislots, int $swislots, int $vwislots, bool $purchase)
+    public function createLicense(string $username, string $siteIP, string $siteUrl, string $sitePath, string $version, int $cms, int $shop, int $gwislots, int $rwislots, int $swislots, int $vwislots, int $purchase)
     {
         return $this->TekBaseAPI->post('/', [
             'customer' => $username,
@@ -81,7 +81,7 @@ class Licenses
             'type' => $purchase
         ]);
     }
- 
+
     /**
      * @param int $id License ID
      * @param string $username The name was assigned by the reseller. (max. 20 characters)

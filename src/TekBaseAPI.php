@@ -102,11 +102,11 @@ class TekBaseAPI
             case 'GET':
                 return $this->getHttpClient()->get($url, ['verify' => false, 'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json', 'authenticate' => 'apikey=' . $this->apiToken]]);
             case 'POST':
-                return $this->getHttpClient()->post($url, ['verify' => false, 'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json', 'authenticate' => 'apikey=' . $this->apiToken], 'form_params' => $params,]);
+                return $this->getHttpClient()->post($url, ['verify' => false, 'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json', 'authenticate' => 'apikey=' . $this->apiToken], 'json' => $params,]);
             case 'PUT':
-                return $this->getHttpClient()->put($url, ['verify' => false, 'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json', 'authenticate' => 'apikey=' . $this->apiToken], 'form_params' => $params,]);
+                return $this->getHttpClient()->put($url, ['verify' => false, 'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json', 'authenticate' => 'apikey=' . $this->apiToken], 'json' => $params,]);
             case 'DELETE':
-                return $this->getHttpClient()->delete($url, ['verify' => false, 'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json', 'authenticate' => 'apikey=' . $this->apiToken], 'form_params' => $params,]);
+                return $this->getHttpClient()->delete($url, ['verify' => false, 'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json', 'authenticate' => 'apikey=' . $this->apiToken], 'json' => $params,]);
             default:
                 throw new ParameterException('Wrong HTTP method passed');
         }

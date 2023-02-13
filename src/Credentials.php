@@ -10,8 +10,8 @@ class Credentials
     private $reseller_id;
     /**
      * Credentials constructor.
-     * @param string $token
-     * @param string $reseller_id
+     * @param string $token api token
+     * @param string $reseller_id Reseller User ID
      */
     public function __construct(string $token, string $reseller_id)
     {

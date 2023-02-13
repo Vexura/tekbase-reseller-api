@@ -20,6 +20,7 @@ class TekBaseAPI
      * TekBaseAPI constructor.
      *
      * @param string $token API Token for all requests
+     * @param string $reseller_id Reseller User ID
      * @param null $httpClient
      */
     public function __construct(string $token, string $reseller_id, $httpClient = null) {

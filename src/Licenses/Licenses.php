@@ -81,7 +81,7 @@ class Licenses
             'type' => $purchase
         ]);
     }
-
+ 
     /**
      * @param int $id License ID
      * @param string $username The name was assigned by the reseller. (max. 20 characters)
